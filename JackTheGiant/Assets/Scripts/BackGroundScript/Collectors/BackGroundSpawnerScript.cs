@@ -40,7 +40,7 @@ public class BackGroundSpawnerScript : MonoBehaviour {
             {
                 Vector3 temp = collision.transform.position;
                 float height = ((BoxCollider2D)collision).size.y;
-                for (int i = 1; i < backgrounds.Length; i++)
+                for (int i = 0; i < backgrounds.Length; i++)
                 {
                     if (!backgrounds[i].activeInHierarchy)
                     {

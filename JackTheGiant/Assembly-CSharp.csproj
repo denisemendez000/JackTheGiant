@@ -67,11 +67,14 @@
     <Compile Include="Assets\Scripts\CameraScripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CloudScripts\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\CloudScripts\CloudSpawner.cs" />
+    <Compile Include="Assets\Scripts\CollectablesScripts\CollectablesScript.cs" />
+    <Compile Include="Assets\Scripts\GameController\GamePlayControllerScript.cs" />
     <Compile Include="Assets\Scripts\GameController\HighScoreController.cs" />
     <Compile Include="Assets\Scripts\GameController\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\GameController\OPtionsController.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerBounds.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerScore.cs" />
     <None Include="Assets\Font\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/densie/Desktop/UNTIYTRAINING/JackTheGiant/JackTheGiant/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

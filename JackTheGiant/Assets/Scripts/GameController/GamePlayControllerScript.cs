@@ -13,20 +13,22 @@ public class GamePlayControllerScript : MonoBehaviour {
     public static GamePlayControllerScript instance;
 
     [SerializeField]
-    private Text scoreText, CoinText, LifeText;
+    private Text scoreText, CoinText, LifeText, GameOverScoreText, GameOverCoinText;
 
     [SerializeField]
-    private GameObject PausePanel;
+    private GameObject PausePanel, GameOverPanel, ReadyButton;
+
+    void Start()
+    {
+        Time.timeScale = 0f;
+    }
+
 
     void Awake()
     {
         MakeInstance();
     }
     
-	// Use this for initialization
-  	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -64,6 +66,36 @@ public class GamePlayControllerScript : MonoBehaviour {
     {
         Time.timeScale = 0f;
         PausePanel.SetActive(true);
+    }
+
+    public void StartTheGame()
+    {
+        Time.timeScale = 1f;
+        ReadyButton.SetActive(false);
+
+    }
+    public void GameOverShowPanel(int finalScore, int finalCoinScore)
+    {
+        GameOverPanel.SetActive(true);
+        GameOverCoinText.text = "x" + finalCoinScore;
+        GameOverScoreText.text = "x" + finalScore;
+        StartCoroutine(GameOverLoadMainMenu());
+    }
+
+    IEnumerator GameOverLoadMainMenu()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void PlayerDiedRestartTheGame()
+    {
+        StartCoroutine(PlayerDiedRestart());
+    }
+    IEnumerator PlayerDiedRestart()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GamePlayScene");
     }
 
     void MakeInstance()

@@ -13,6 +13,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void StartGame()
     {
+        GameManagerScript.instance.gameStartedAfterPlayerDied = true;
         SceneManager.LoadScene("GameplayScene");
     }
 

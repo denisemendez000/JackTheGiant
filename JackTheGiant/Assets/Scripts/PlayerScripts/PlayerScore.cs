@@ -75,19 +75,23 @@ public class PlayerScore : MonoBehaviour {
         {
             cameraScript.moveCamera = false;
             countScore = false;
-           
-            //number is arbitrary
+
+            //number is arbitrary Just want to move the play out of the screen
             transform.position = new Vector3(500, 500, 0);
             lifeCount--;
+            GameManagerScript.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
         }
 
         if (collision.tag == "Deadly")
         {
             cameraScript.moveCamera = false;
             countScore = false;
+
             //number is arbitrary
             transform.position = new Vector3(500, 500, 0);
             lifeCount--;
+
+            GameManagerScript.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
         }
     }
 }

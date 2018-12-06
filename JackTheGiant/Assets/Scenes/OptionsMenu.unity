@@ -187,7 +187,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 17590846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652689059}
+        m_MethodName: EasyDifficulty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &17590846
@@ -251,6 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50ff54d6fb63e48be8cd66faf2fa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easySign: {fileID: 751525970}
+  medSign: {fileID: 1799493535}
+  hardSign: {fileID: 1238431548}
 --- !u!224 &652689060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -523,7 +537,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 908960515}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652689059}
+        m_MethodName: HardDifficulty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &908960515
@@ -711,7 +736,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1039208396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652689059}
+        m_MethodName: MedDifficulty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1039208396

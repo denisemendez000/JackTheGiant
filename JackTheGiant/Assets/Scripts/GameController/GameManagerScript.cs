@@ -12,7 +12,7 @@ public class GameManagerScript : MonoBehaviour {
 
     [HideInInspector]
     public int score, coinScore, lifeScore;
-
+ 
     // This is a Delegate
     private void OnEnable()
     {
@@ -24,6 +24,40 @@ public class GameManagerScript : MonoBehaviour {
     {
         SceneManager.sceneLoaded -= LevelFinishedLoading;
     }
+
+    // Use this for initialization
+    void Awake()
+    {
+        MakeSingleton();
+    }
+    // Use this for initialization
+    void Start()
+    {
+        InitializeVariables();
+    }
+
+    void InitializeVariables()
+    {
+        if (!PlayerPrefs.HasKey("Game Initialized"))
+        {
+            GamePreferencesScript.SetEasyDifficulty(0);
+            GamePreferencesScript.SetEasyDifficultyScore(0);
+            GamePreferencesScript.SetEasyDifficultyScoreCoin(0);
+
+            GamePreferencesScript.SetMedDifficulty(1);
+            GamePreferencesScript.SetMedDifficultyScore(0);
+            GamePreferencesScript.SetMedDifficultyScoreCoin(0);
+       
+            GamePreferencesScript.SetHardDifficulty(0);
+            GamePreferencesScript.SetHardDifficultyScore(0);
+            GamePreferencesScript.SetHardDifficultyScoreCoin(0);
+
+            GamePreferencesScript.SetIsMusicOn(0);
+
+            PlayerPrefs.SetInt("Game Initialized", 123);
+        }
+    }
+
 
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
@@ -66,10 +100,7 @@ public class GameManagerScript : MonoBehaviour {
         }
     }
 
-	// Use this for initialization
-	void Awake () {
-        MakeSingleton();
-	}
+
 
     public void CheckGameStatus(int scores, int coinScores, int lifeScores)
     {

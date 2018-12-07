@@ -7,13 +7,13 @@ public class MainMenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+      //  PlayerPrefs.DeleteAll();
+    }
 	
 
     public void StartGame()
     {
-        GameManagerScript.instance.gameStartedAfterPlayerDied = true;
+        GameManagerScript.instance.gameStartedFromMainMenu = true;
         SceneManager.LoadScene("GameplayScene");
     }
 

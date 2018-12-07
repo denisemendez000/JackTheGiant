@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
 
+    private float easySpeed = 3.2f;
+    private float medSpeed = 4.0f;
+    private float hardSpeed = 4.5f;
+
     private float speed = 1f, acceleration = 0.2f, maxSpeed = 3.2f;
     
     [HideInInspector]
@@ -12,7 +16,21 @@ public class CameraScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         moveCamera = true;
-	}
+        if (GamePreferencesScript.GetEasyDifficulty() == 1)
+        {
+            maxSpeed = easySpeed;
+        }
+        if (GamePreferencesScript.GetMedDifficulty() == 1)
+        {
+            maxSpeed = medSpeed;
+        }
+        if (GamePreferencesScript.GetHardDifficulty() == 1)
+        {
+            maxSpeed = hardSpeed;
+        }
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

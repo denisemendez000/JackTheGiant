@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour {
 
     void InitializeVariables()
     {
-        if (!PlayerPrefs.HasKey("Game Initialized"))
+        //if (!PlayerPrefs.HasKey("Game Initialized"))
         {
             GamePreferencesScript.SetEasyDifficulty(0);
             GamePreferencesScript.SetEasyDifficultyScore(0);
@@ -106,6 +106,52 @@ public class GameManagerScript : MonoBehaviour {
     {
         if (lifeScore<0)
         {
+            if(GamePreferencesScript.GetEasyDifficulty() == 1)
+            {
+                int highScore = GamePreferencesScript.GetEasyDifficultyScore();
+                int coin = GamePreferencesScript.GetEasyDifficultyScoreCoin();
+
+                if (this.score > highScore)
+                {
+                    GamePreferencesScript.SetEasyDifficultyScore(highScore);
+                }
+
+                if (this.coinScore > coin)
+                {
+                    GamePreferencesScript.SetEasyDifficultyScoreCoin(coinScore);
+                }
+            }
+
+            if (GamePreferencesScript.GetMedDifficulty() == 1)
+            {
+                int highScore = GamePreferencesScript.GetMedDifficultyScore();
+                int coin = GamePreferencesScript.GetMedDifficultyScoreCoin();
+                if (this.score > highScore)
+                {
+                    GamePreferencesScript.SetMedDifficultyScore(highScore);
+                }
+
+                if (this.coinScore > coin)
+                {
+                    GamePreferencesScript.SetMedDifficultyScoreCoin(coinScore);
+                }
+            }
+
+            if (GamePreferencesScript.GetHardDifficulty() == 1)
+            {
+                int highScore = GamePreferencesScript.GetHardDifficultyScore();
+                int coin = GamePreferencesScript.GetHardDifficultyScoreCoiny();
+                if (this.score > highScore)
+                {
+                    GamePreferencesScript.SetHardDifficultyScore(highScore);
+                }
+
+                if (this.coinScore > coin)
+                {
+                    GamePreferencesScript.SetHardDifficultyScoreCoin(coinScore);
+                }
+            }
+
             gameStartedFromMainMenu = false;
             gameStartedAfterPlayerDied = false;
 

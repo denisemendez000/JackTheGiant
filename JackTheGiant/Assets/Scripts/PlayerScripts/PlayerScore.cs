@@ -71,7 +71,7 @@ public class PlayerScore : MonoBehaviour {
             GamePlayControllerScript.instance.SetScore(scoreCount);
         }
 
-        if(collision.tag == "Bounds")
+        if(collision.tag == "Bounds" || collision.tag == "Deadly")
         {
             cameraScript.moveCamera = false;
             countScore = false;
@@ -82,16 +82,16 @@ public class PlayerScore : MonoBehaviour {
             GameManagerScript.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
         }
 
-        if (collision.tag == "Deadly")
-        {
-            cameraScript.moveCamera = false;
-            countScore = false;
-
-            //number is arbitrary
-            transform.position = new Vector3(500, 500, 0);
-            lifeCount--;
-
-            GameManagerScript.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
-        }
-    }
+        //if (collision.tag == "Deadly")
+        //{
+        //    cameraScript.moveCamera = false;
+        //    countScore = false;
+        //
+        //    //number is arbitrary
+        //    transform.position = new Vector3(500, 500, 0);
+        //    lifeCount--;
+        //
+        //    GameManagerScript.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
+        //}
+    }   //
 }

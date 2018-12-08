@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour {
 
     void InitializeVariables()
     {
-        //if (!PlayerPrefs.HasKey("Game Initialized"))
+        if (!PlayerPrefs.HasKey("Game Initialized"))
         {
             GamePreferencesScript.SetEasyDifficulty(0);
             GamePreferencesScript.SetEasyDifficultyScore(0);
@@ -61,7 +61,7 @@ public class GameManagerScript : MonoBehaviour {
 
     void LevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "GameplayScene")
+        if (scene.name == "GamePlayScene")
         {
             if (gameStartedAfterPlayerDied)
             {
@@ -104,21 +104,21 @@ public class GameManagerScript : MonoBehaviour {
 
     public void CheckGameStatus(int scores, int coinScores, int lifeScores)
     {
-        if (lifeScore<0)
+        if (lifeScores <= 0)
         {
             if(GamePreferencesScript.GetEasyDifficulty() == 1)
             {
                 int highScore = GamePreferencesScript.GetEasyDifficultyScore();
                 int coin = GamePreferencesScript.GetEasyDifficultyScoreCoin();
 
-                if (this.score > highScore)
+                if (scores > highScore)
                 {
-                    GamePreferencesScript.SetEasyDifficultyScore(highScore);
+                    GamePreferencesScript.SetEasyDifficultyScore(scores);
                 }
 
-                if (this.coinScore > coin)
+                if (coinScores > coin)
                 {
-                    GamePreferencesScript.SetEasyDifficultyScoreCoin(coinScore);
+                    GamePreferencesScript.SetEasyDifficultyScoreCoin(coinScores);
                 }
             }
 
@@ -126,14 +126,14 @@ public class GameManagerScript : MonoBehaviour {
             {
                 int highScore = GamePreferencesScript.GetMedDifficultyScore();
                 int coin = GamePreferencesScript.GetMedDifficultyScoreCoin();
-                if (this.score > highScore)
+                if (scores > highScore)
                 {
-                    GamePreferencesScript.SetMedDifficultyScore(highScore);
+                    GamePreferencesScript.SetMedDifficultyScore(scores);
                 }
 
-                if (this.coinScore > coin)
+                if (coinScores > coin)
                 {
-                    GamePreferencesScript.SetMedDifficultyScoreCoin(coinScore);
+                    GamePreferencesScript.SetMedDifficultyScoreCoin(coinScores);
                 }
             }
 
@@ -141,14 +141,14 @@ public class GameManagerScript : MonoBehaviour {
             {
                 int highScore = GamePreferencesScript.GetHardDifficultyScore();
                 int coin = GamePreferencesScript.GetHardDifficultyScoreCoiny();
-                if (this.score > highScore)
+                if (scores > highScore)
                 {
-                    GamePreferencesScript.SetHardDifficultyScore(highScore);
+                    GamePreferencesScript.SetHardDifficultyScore(scores);
                 }
 
-                if (this.coinScore > coin)
+                if (coinScores > coin)
                 {
-                    GamePreferencesScript.SetHardDifficultyScoreCoin(coinScore);
+                    GamePreferencesScript.SetHardDifficultyScoreCoin(coinScores);
                 }
             }
 
@@ -156,7 +156,7 @@ public class GameManagerScript : MonoBehaviour {
             gameStartedAfterPlayerDied = false;
 
             // Gameplay controller
-            GamePlayControllerScript.instance.GameOverShowPanel(score, coinScore);
+            GamePlayControllerScript.instance.GameOverShowPanel(scores, coinScores);
         }
         else
         {

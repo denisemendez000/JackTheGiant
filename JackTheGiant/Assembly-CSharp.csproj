@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\GameController\GamePlayControllerScript.cs" />
     <Compile Include="Assets\Scripts\GameController\HighScoreController.cs" />
     <Compile Include="Assets\Scripts\GameController\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\GameController\MusicController.cs" />
     <Compile Include="Assets\Scripts\GameController\OPtionsController.cs" />
     <Compile Include="Assets\Scripts\GamePrefences\GamePreferencesScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Player.cs" />

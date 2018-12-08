@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class GamePreferencesScript {
 
+    public static bool OnlyOnce = false;
     public static string EasyDifficulty = "EasyDifficulty";
     public static string MedDifficulty = "MedDifficulty";
     public static string HardDifficulty = "HardDifficulty";

@@ -75,8 +75,10 @@
     <Compile Include="Assets\Scripts\GameController\MusicController.cs" />
     <Compile Include="Assets\Scripts\GameController\OPtionsController.cs" />
     <Compile Include="Assets\Scripts\GamePrefences\GamePreferencesScript.cs" />
+    <Compile Include="Assets\Scripts\JoyStickScripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerBounds.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerMoveJoystick.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerScore.cs" />
     <None Include="Assets\Font\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">

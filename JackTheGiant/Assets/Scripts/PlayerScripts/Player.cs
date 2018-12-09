@@ -30,7 +30,8 @@ public class Player : MonoBehaviour {
     private void FixedUpdate()
     {
         //Called every few frames... Best for physics code.
-        PlayerMoveKeyboard();
+        // USE FOR EDITOR WHEN ON THE DEVICE DISABLE
+        //PlayerMoveKeyboard();
     }
 
     void PlayerMoveKeyboard()
